@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="dk.itu.moodtracker.Tracker"
+    android:textColor="@color/dark_green" >
+    <item
+        android:id="@+id/edit_profile"
+        android:icon="@drawable/baseline_person_24"
+        android:title="edit profile"
+
+        android:iconTint="@color/dark_green"
+        app:showAsAction="always" />
+</menu>

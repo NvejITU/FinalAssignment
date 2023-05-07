@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/offwhite"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/LogHabit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:text="Log Mood"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/HabitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:text="What mood are you in?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/mood_spinner"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="@+id/HabitText"
+        app:layout_constraintTop_toBottomOf="@+id/HabitText" />
+
+    <TextView
+        android:id="@+id/HabitDayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="What day is it?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/mood_spinner" />
+
+    <Spinner
+        android:id="@+id/day_spinner"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autofillHints="Day"
+        app:layout_constraintStart_toStartOf="@+id/HabitDayText"
+        app:layout_constraintTop_toBottomOf="@+id/HabitDayText" />
+
+    <Spinner
+        android:id="@+id/month_spinner"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:autofillHints="Month"
+        app:layout_constraintBottom_toBottomOf="@+id/day_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/year_spinner"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/day_spinner" />
+
+    <Spinner
+        android:id="@+id/year_spinner"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:autofillHints="Year"
+        app:layout_constraintBottom_toBottomOf="@+id/month_spinner"
+        app:layout_constraintStart_toEndOf="@+id/month_spinner" />
+
+    <TextView
+        android:id="@+id/timeOfDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:text="What time of day is it?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintBottom_toBottomOf="@+id/HabitText"
+        app:layout_constraintStart_toEndOf="@+id/HabitText"
+        app:layout_constraintTop_toTopOf="@+id/HabitText" />
+
+    <Spinner
+        android:id="@+id/tod_spinner"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/timeOfDay"
+        app:layout_constraintTop_toBottomOf="@+id/timeOfDay" />
+
+    <Button
+        android:id="@+id/log_mood_but"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Log Mood"
+        app:layout_constraintEnd_toStartOf="@+id/description_habit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="195dp"
+        android:layout_height="136dp"
+        app:layout_constraintEnd_toEndOf="@+id/LogHabit"
+        app:layout_constraintStart_toStartOf="@+id/LogHabit"
+        app:layout_constraintTop_toBottomOf="@+id/LogHabit"
+        app:srcCompat="@drawable/mood" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Description"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/day_spinner" />
+
+    <EditText
+        android:id="@+id/description_habit"
+        android:layout_width="390dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/tml_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Total moods logged:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintEnd_toStartOf="@+id/description_habit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/moods_logged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/description_habit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tml_text" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="140dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toStartOf="@+id/description_habit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_mood_but" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

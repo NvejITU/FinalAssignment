@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/offwhite"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:orientation="horizontal"
+        android:paddingBottom="20dp">
+
+    <TextView
+        android:id="@+id/LogHabit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
+        android:text="Log Habit"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/HabitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp"
+        android:text="What habit have you completed?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/habit_completed"
+        android:layout_width="355dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/HabitText"
+        app:layout_constraintTop_toBottomOf="@+id/HabitText" />
+
+    <TextView
+        android:id="@+id/HabitDayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="What day is it?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/habit_completed" />
+
+    <Spinner
+        android:id="@+id/Hday_spinner"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autofillHints="Day"
+        app:layout_constraintStart_toStartOf="@+id/HabitDayText"
+        app:layout_constraintTop_toBottomOf="@+id/HabitDayText" />
+
+    <Spinner
+        android:id="@+id/Hmonth_spinner"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:autofillHints="Month"
+        app:layout_constraintBottom_toBottomOf="@+id/Hday_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/Hyear_spinner"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Hday_spinner" />
+
+    <Spinner
+        android:id="@+id/Hyear_spinner"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:autofillHints="Year"
+        app:layout_constraintBottom_toBottomOf="@+id/Hmonth_spinner"
+        app:layout_constraintStart_toEndOf="@+id/Hmonth_spinner" />
+
+    <Button
+        android:id="@+id/log_habit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Log Habit"
+        app:layout_constraintEnd_toStartOf="@+id/description_habit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="195dp"
+        android:layout_height="136dp"
+        app:layout_constraintEnd_toEndOf="@+id/LogHabit"
+        app:layout_constraintStart_toStartOf="@+id/LogHabit"
+        app:layout_constraintTop_toBottomOf="@+id/LogHabit"
+        app:srcCompat="@drawable/pick_habits2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:text="Description"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/Hday_spinner" />
+
+    <EditText
+        android:id="@+id/description_habit"
+        android:layout_width="240dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="50dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toStartOf="@+id/description_habit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_habit_button" />
+
+    <TextView
+        android:id="@+id/THL_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Total habits logged:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        app:layout_constraintEnd_toStartOf="@+id/description_habit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <TextView
+        android:id="@+id/habits_logged"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/description_habit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/THL_text" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="@color/light_green"
+        app:layout_constraintStart_toEndOf="@+id/description_habit"
+        app:layout_constraintTop_toBottomOf="@+id/Hyear_spinner"
+        app:srcCompat="@drawable/baseline_photo_camera_24" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Take a picture of your"
+        app:layout_constraintStart_toEndOf="@+id/description_habit"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+
+    <ImageView
+        android:id="@+id/photo_view"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="5dp"
+        android:background="#FFFFFF"
+        android:padding="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/Hyear_spinner" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="completed habit"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

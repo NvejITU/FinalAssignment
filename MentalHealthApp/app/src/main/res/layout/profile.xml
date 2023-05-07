@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:background="@color/offwhite">
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="jfkjf"
+        app:layout_constraintBottom_toBottomOf="@+id/Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Name"
+        app:layout_constraintTop_toTopOf="@+id/Name" />
+
+    <EditText
+        android:id="@+id/editTextTextDoB"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date|textPersonName"
+        app:layout_constraintBottom_toBottomOf="@+id/DoB"
+        app:layout_constraintEnd_toEndOf="@+id/editTextName"
+        app:layout_constraintStart_toEndOf="@+id/DoB"
+        app:layout_constraintStart_toStartOf="@+id/editTextName"
+        app:layout_constraintTop_toTopOf="@+id/DoB" />
+
+    <TextView
+        android:id="@+id/Name"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Profile" />
+
+    <TextView
+        android:id="@+id/DoB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Age"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Name" />
+
+    <TextView
+        android:id="@+id/Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="E-mail"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DoB" />
+
+    <EditText
+        android:id="@+id/editTextEmailAddress"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="@+id/Email"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextDoB"
+        app:layout_constraintStart_toEndOf="@+id/Email"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextDoB"
+        app:layout_constraintTop_toTopOf="@+id/Email" />
+
+    <TextView
+        android:id="@+id/Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Phone"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Email" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="@+id/Phone"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEmailAddress"
+        app:layout_constraintStart_toEndOf="@+id/Phone"
+        app:layout_constraintStart_toStartOf="@+id/editTextEmailAddress"
+        app:layout_constraintTop_toTopOf="@+id/Phone" />
+
+    <Button
+        android:id="@+id/EditProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MoodTracker" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/light_green</item>
+        <item name="colorPrimaryVariant">@color/dark_green</item>
+        <item name="colorOnPrimary">@color/offwhite</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/dark_blue</item>
+        <item name="colorSecondaryVariant">@color/light_blue</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="materialButtonStyle"> @style/Buttons</item>
+        <item name="android:textColor"> @color/dark_green</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.MoodTracker.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MoodTracker.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MoodTracker.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Buttons" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor"> @color/dark_green</item>
+        <item name="android:backgroundTint"> @color/light_green</item>
+    </style>
+</resources>
