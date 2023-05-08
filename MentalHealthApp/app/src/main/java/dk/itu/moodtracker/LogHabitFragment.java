@@ -84,6 +84,9 @@ public class LogHabitFragment extends Fragment {
                     Toast.makeText(requireActivity(), "A new habit has been logged", Toast.LENGTH_SHORT).show();
                     habit.setText("");
                     description.setText("");
+                    daySpinner.setSelection(0);
+                    monthSpinner.setSelection(0);
+                    yearSpinner.setSelection(0);
                     habit.onEditorAction(EditorInfo.IME_ACTION_DONE);
                 } else {
                     Toast.makeText(requireActivity(), "Please provide a habit and a date", Toast.LENGTH_SHORT).show();

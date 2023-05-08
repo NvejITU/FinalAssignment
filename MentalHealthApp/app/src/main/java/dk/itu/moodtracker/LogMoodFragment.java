@@ -72,6 +72,11 @@ public class LogMoodFragment extends Fragment {
                     viewModel.updateMoodsSize();
                     description.setText("");
                     description.onEditorAction(EditorInfo.IME_ACTION_DONE);
+                    moodSpinner.setSelection(0);
+                    todSpinner.setSelection(0);
+                    daySpinner.setSelection(0);
+                    moodSpinner.setSelection(0);
+                    yearSpinner.setSelection(0);
                     Toast.makeText(requireActivity(), "A new mood has been logged", Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(requireActivity(), "Please choose a mood, date and time of day", Toast.LENGTH_SHORT).show();

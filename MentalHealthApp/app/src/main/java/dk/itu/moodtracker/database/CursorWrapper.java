@@ -2,6 +2,8 @@ package dk.itu.moodtracker.database;
 
 import android.database.Cursor;
 
+import java.sql.Blob;
+
 import dk.itu.moodtracker.Habit;
 import dk.itu.moodtracker.Mood;
 

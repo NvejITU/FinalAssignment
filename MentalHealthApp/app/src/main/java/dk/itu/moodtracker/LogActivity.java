@@ -36,86 +36,82 @@ public class LogActivity extends AppCompatActivity {
         botNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     switch (item.getItemId()) {
                         case R.id.log_mood:
-                            if (fragmentMood == null) {
-                                fragmentMood = new LogMoodFragment();
-                                fm.beginTransaction()
-                                        .add(R.id.container_log_activity_landscape, fragmentMood)
-                                        .commit();
+                            if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                                if (fragmentMood == null) {
+                                    fragmentMood = new LogMoodFragment();
+                                    fm.beginTransaction()
+                                            .add(R.id.container_log_activity, fragmentMood)
+                                            .commit();
+                                } else {
+                                    fm.beginTransaction()
+                                            .show(fragmentMood)
+                                            .commit();
+                                }
+                                if (fragmentHabit != null) {
+                                    fm.beginTransaction()
+                                            .hide(fragmentHabit)
+                                            .commit();
+                                }
+                                return true;
                             } else {
-                                fm.beginTransaction()
-                                        .show(fragmentMood)
-                                        .commit();
-                            }
-                            if (fragmentHabit != null) {
-                                fm.beginTransaction()
-                                        .hide(fragmentHabit)
-                                        .commit();
-                            }
-                            return true;
+                                if (fragmentMood == null) {
+                                    fragmentMood = new LogMoodFragment();
+                                    fm.beginTransaction()
+                                            .add(R.id.container_log_activity_landscape, fragmentMood)
+                                            .commit();
+                                } else {
+                                    fm.beginTransaction()
+                                            .show(fragmentMood)
+                                            .commit();
+                                }
+                                if (fragmentHabit != null) {
+                                    fm.beginTransaction()
+                                            .hide(fragmentHabit)
+                                            .commit();
+                                }
+                            } return true;
                         case R.id.log_habit:
-                            if (fragmentHabit == null) {
-                                fragmentHabit = new LogHabitFragment();
-                                fm.beginTransaction()
-                                        .add(R.id.container_log_activity_landscape, fragmentHabit)
-                                        .commit();
-                            } else {
-                                fm.beginTransaction()
-                                        .show(fragmentHabit)
-                                        .commit();
+                            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                                if (fragmentHabit == null) {
+                                    fragmentHabit = new LogHabitFragment();
+                                    fm.beginTransaction()
+                                            .add(R.id.container_log_activity, fragmentHabit)
+                                            .commit();
+                                } else {
+                                    fm.beginTransaction()
+                                            .show(fragmentHabit)
+                                            .commit();
+                                }
+                                if (fragmentMood != null) {
+                                    fm.beginTransaction()
+                                            .hide(fragmentMood)
+                                            .commit();
+                                }
+                                return true;
+                            }else {
+                                if (fragmentHabit == null) {
+                                    fragmentHabit = new LogHabitFragment();
+                                    fm.beginTransaction()
+                                            .add(R.id.container_log_activity_landscape, fragmentHabit)
+                                            .commit();
+                                } else {
+                                    fm.beginTransaction()
+                                            .show(fragmentHabit)
+                                            .commit();
+                                }
+                                if (fragmentMood != null) {
+                                    fm.beginTransaction()
+                                            .hide(fragmentMood)
+                                            .commit();
+                                }
+                                return true;
                             }
-                            if (fragmentMood != null) {
-                                fm.beginTransaction()
-                                        .hide(fragmentMood)
-                                        .commit();
-                            }
-                            return true;
-                        default:
-                            return false;
-                    }
-                } else {
-                    switch (item.getItemId()) {
-                        case R.id.log_mood:
-                            if (fragmentMood == null) {
-                                fragmentMood = new LogMoodFragment();
-                                fm.beginTransaction()
-                                        .add(R.id.container_log_activity, fragmentMood)
-                                        .commit();
-                            } else {
-                                fm.beginTransaction()
-                                        .show(fragmentMood)
-                                        .commit();
-                            }
-                            if (fragmentHabit != null) {
-                                fm.beginTransaction()
-                                        .hide(fragmentHabit)
-                                        .commit();
-                            }
-                            return true;
-                        case R.id.log_habit:
-                            if (fragmentHabit == null) {
-                                fragmentHabit = new LogHabitFragment();
-                                fm.beginTransaction()
-                                        .add(R.id.container_log_activity, fragmentHabit)
-                                        .commit();
-                            } else {
-                                fm.beginTransaction()
-                                        .show(fragmentHabit)
-                                        .commit();
-                            }
-                            if (fragmentMood != null) {
-                                fm.beginTransaction()
-                                        .hide(fragmentMood)
-                                        .commit();
-                            }
-                            return true;
                         default:
                             return false;
                     }
                 }
-            }
         });
     }
 
