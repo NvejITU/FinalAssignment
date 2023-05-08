@@ -23,7 +23,6 @@ public class LogActivity extends AppCompatActivity {
         DB.initialize(this);
         setContentView(R.layout.log_activity);
         fm = getSupportFragmentManager();
-        setUpFragments();
         setUpBottomNavigationView();
         if (botNav.getSelectedItemId() == R.id.log_mood){
             botNav.setSelectedItemId(R.id.log_mood);
@@ -32,86 +31,89 @@ public class LogActivity extends AppCompatActivity {
         }
     }
 
-    private void setUpFragments() {
-        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            if (fragmentMood == null) {
-                fragmentMood = new LogMoodFragment();
-                fm.beginTransaction()
-                        .add(R.id.container_log_activity_landscape, fragmentMood)
-                        .commit();
-            }
-            if (fragmentHabit == null) {
-                fragmentHabit = new LogHabitFragment();
-                fm.beginTransaction()
-                        .add(R.id.container_log_activity_landscape, fragmentHabit)
-                        .commit();
-            }
-        } else {
-            if (fragmentMood == null) {
-                fragmentMood = new LogMoodFragment();
-                fm.beginTransaction()
-                        .add(R.id.container_log_activity, fragmentMood)
-                        .commit();
-            } else {
-                fm.beginTransaction()
-                        .show(fragmentMood)
-                        .commit();
-            }
-            if (fragmentHabit == null) {
-                fragmentHabit = new LogHabitFragment();
-                fm.beginTransaction()
-                        .add(R.id.container_log_activity, fragmentHabit)
-                        .commit();
-            } else {
-                fm.beginTransaction()
-                        .hide(fragmentHabit)
-                        .commit();
-            }
-        }
-    }
-
     private void setUpBottomNavigationView() {
         botNav = findViewById(R.id.bottomNavigation_log);
         botNav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.log_mood:
-                        if (fragmentMood == null) {
-                            fragmentMood = new LogMoodFragment();
-                            fm.beginTransaction()
-                                    .add(R.id.container_log_activity, fragmentMood)
-                                    .commit();
-                        } else {
-                            fm.beginTransaction()
-                                    .show(fragmentMood)
-                                    .commit();
-                        }
-                        if (fragmentHabit != null) {
-                            fm.beginTransaction()
-                                    .hide(fragmentHabit)
-                                    .commit();
-                        }
-                        return true;
-                    case R.id.log_habit:
-                        if (fragmentHabit == null) {
-                            fragmentHabit = new LogHabitFragment();
-                            fm.beginTransaction()
-                                    .add(R.id.container_log_activity, fragmentHabit)
-                                    .commit();
-                        } else {
-                            fm.beginTransaction()
-                                    .show(fragmentHabit)
-                                    .commit();
-                        }
-                        if (fragmentMood != null) {
-                            fm.beginTransaction()
-                                    .hide(fragmentMood)
-                                    .commit();
-                        }
-                        return true;
-                    default:
-                        return false;
+                if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    switch (item.getItemId()) {
+                        case R.id.log_mood:
+                            if (fragmentMood == null) {
+                                fragmentMood = new LogMoodFragment();
+                                fm.beginTransaction()
+                                        .add(R.id.container_log_activity_landscape, fragmentMood)
+                                        .commit();
+                            } else {
+                                fm.beginTransaction()
+                                        .show(fragmentMood)
+                                        .commit();
+                            }
+                            if (fragmentHabit != null) {
+                                fm.beginTransaction()
+                                        .hide(fragmentHabit)
+                                        .commit();
+                            }
+                            return true;
+                        case R.id.log_habit:
+                            if (fragmentHabit == null) {
+                                fragmentHabit = new LogHabitFragment();
+                                fm.beginTransaction()
+                                        .add(R.id.container_log_activity_landscape, fragmentHabit)
+                                        .commit();
+                            } else {
+                                fm.beginTransaction()
+                                        .show(fragmentHabit)
+                                        .commit();
+                            }
+                            if (fragmentMood != null) {
+                                fm.beginTransaction()
+                                        .hide(fragmentMood)
+                                        .commit();
+                            }
+                            return true;
+                        default:
+                            return false;
+                    }
+                } else {
+                    switch (item.getItemId()) {
+                        case R.id.log_mood:
+                            if (fragmentMood == null) {
+                                fragmentMood = new LogMoodFragment();
+                                fm.beginTransaction()
+                                        .add(R.id.container_log_activity, fragmentMood)
+                                        .commit();
+                            } else {
+                                fm.beginTransaction()
+                                        .show(fragmentMood)
+                                        .commit();
+                            }
+                            if (fragmentHabit != null) {
+                                fm.beginTransaction()
+                                        .hide(fragmentHabit)
+                                        .commit();
+                            }
+                            return true;
+                        case R.id.log_habit:
+                            if (fragmentHabit == null) {
+                                fragmentHabit = new LogHabitFragment();
+                                fm.beginTransaction()
+                                        .add(R.id.container_log_activity, fragmentHabit)
+                                        .commit();
+                            } else {
+                                fm.beginTransaction()
+                                        .show(fragmentHabit)
+                                        .commit();
+                            }
+                            if (fragmentMood != null) {
+                                fm.beginTransaction()
+                                        .hide(fragmentMood)
+                                        .commit();
+                            }
+                            return true;
+                        default:
+                            return false;
+                    }
                 }
             }
         });
