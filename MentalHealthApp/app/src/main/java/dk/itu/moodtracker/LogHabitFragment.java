@@ -79,7 +79,7 @@ public class LogHabitFragment extends Fragment {
                 String desc = description.getText().toString();
 
                 if (!(nHabit.equals("")) && !(date.equals(""))) {
-                    viewModel.addHabit(nHabit, date, desc);
+                    viewModel.addHabit(nHabit, date, desc, image);
                     viewModel.updateHabitsSize();
                     Toast.makeText(requireActivity(), "A new habit has been logged", Toast.LENGTH_SHORT).show();
                     habit.setText("");

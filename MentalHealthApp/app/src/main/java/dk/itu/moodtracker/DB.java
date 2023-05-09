@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.ImageView;
 
 import androidx.lifecycle.ViewModel;
 
@@ -53,10 +54,11 @@ public class DB extends ViewModel {
         database.insert(DBSchema.MoodTable.NAME, null, values);
     }
 
-    public void addHabit(String habit, String day, String desc){
+    public void addHabit(String habit, String day, String desc, ImageView picture){
         Habit newHabit = new Habit(habit, day, desc);
         ContentValues values = getHabitContentValues(newHabit);
         database.insert(DBSchema.HabitTable.NAME, null, values);
+        newHabit.addPicture(picture);
     }
 
     public int size(){

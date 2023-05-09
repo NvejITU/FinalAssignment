@@ -2,6 +2,8 @@ package dk.itu.moodtracker;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Bitmap;
+import android.widget.ImageView;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -41,9 +43,9 @@ public class TrackerViewModel extends ViewModel {
         updateSize();
     }
 
-    public void addHabit(String habit, String day, String desc){
+    public void addHabit(String habit, String day, String desc, ImageView picture){
         DB temp = activities.getValue();
-        temp.addHabit(habit, day, desc);
+        temp.addHabit(habit, day, desc, picture);
         activities.setValue(temp);
     }
 

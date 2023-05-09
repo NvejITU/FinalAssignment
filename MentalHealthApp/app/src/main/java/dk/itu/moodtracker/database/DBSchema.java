@@ -24,6 +24,7 @@ public class DBSchema {
             public static final String HABIT = "habit";
             public static final String DATE = "date";
             public static final String DESCRIPTION = "Description";
+            public static final String IMAGE = "image";
         }
     }
 }

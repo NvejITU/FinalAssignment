@@ -1,6 +1,7 @@
 package dk.itu.moodtracker.database;
 
 import android.database.Cursor;
+import android.widget.ImageView;
 
 import java.sql.Blob;
 
@@ -24,6 +25,7 @@ public class CursorWrapper extends android.database.CursorWrapper {
         String habit = getString(getColumnIndex(DBSchema.HabitTable.Cols.HABIT));
         String date = getString(getColumnIndex(DBSchema.HabitTable.Cols.DATE));
         String desc = getString(getColumnIndex(DBSchema.HabitTable.Cols.DESCRIPTION));
+        String image = getString(getColumnIndex(DBSchema.HabitTable.Cols.IMAGE));
         return new Habit(habit, date, desc);
     }
 }

@@ -24,7 +24,7 @@ public class DBCreate extends  SQLiteOpenHelper{
 
         db.execSQL("create table " + DBSchema.HabitTable.NAME + "(" +
                 DBSchema.HabitTable.Cols.HABIT + ", " + DBSchema.HabitTable.Cols.DATE + ", "
-                + DBSchema.MoodTable.Cols.DESCRIPTION + ")"
+                + DBSchema.HabitTable.Cols.IMAGE + ", " + DBSchema.MoodTable.Cols.DESCRIPTION + ")"
         );
     }
 
