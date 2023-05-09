@@ -17,14 +17,14 @@ public class DBCreate extends  SQLiteOpenHelper{
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("create table " + DBSchema.HabitTable.NAME + "(" +
-                DBSchema.HabitTable.Cols.HABIT + ", " + DBSchema.HabitTable.Cols.DATE + ", " +
-                "" + DBSchema.HabitTable.Cols.DESCRIPTION + ", " + DBSchema.MoodTable.Cols.IMAGE + ")"
-        );
-
         db.execSQL("create table " + DBSchema.MoodTable.NAME + "(" +
                 DBSchema.MoodTable.Cols.MOOD + ", " + DBSchema.MoodTable.Cols.DATE + ", "
                 + DBSchema.MoodTable.Cols.TOD + ", " + DBSchema.MoodTable.Cols.DESCRIPTION + ")"
+        );
+
+        db.execSQL("create table " + DBSchema.HabitTable.NAME + "(" +
+                DBSchema.HabitTable.Cols.HABIT + ", " + DBSchema.HabitTable.Cols.DATE + ", "
+                + DBSchema.MoodTable.Cols.DESCRIPTION + ")"
         );
     }
 

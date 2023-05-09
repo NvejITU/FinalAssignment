@@ -1,5 +1,7 @@
 package dk.itu.moodtracker.database;
 
+import android.graphics.Bitmap;
+
 import java.security.PublicKey;
 import java.sql.Blob;
 import java.util.Date;
@@ -13,7 +15,6 @@ public class DBSchema {
             public static final String DATE = "date"; //should probably be changed to something other than string
             public static final String TOD = "TimeOfDay";
             public static final String DESCRIPTION = "Description";
-            public static final String IMAGE = null;
         }
     }
 
@@ -23,7 +24,6 @@ public class DBSchema {
             public static final String HABIT = "habit";
             public static final String DATE = "date";
             public static final String DESCRIPTION = "Description";
-            public static final Blob IMAGE = null;
         }
     }
 }
